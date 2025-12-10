@@ -1,9 +1,9 @@
 import React from "react";
-
+import BookForm from "@/Components/Bookform";
 const page = () => {
   return (
     <div>
-      <p>welcome view</p>
+      <BookForm />
     </div>
   );
 };

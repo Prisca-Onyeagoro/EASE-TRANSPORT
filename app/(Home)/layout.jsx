@@ -1,10 +1,12 @@
-import NavigationBar from "../../Components/NavigationBar";
-
+import NavigationBar from "@/components/NavigationBar";
 export default function HomeLayout({ children }) {
   return (
-    <main className="p-4">
-      <NavigationBar />
-      {children}
-    </main>
+    <>
+      <main className="p-4 relative z-0">
+        <NavigationBar />
+
+        {children}
+      </main>
+    </>
   );
 }

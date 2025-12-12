@@ -4,7 +4,6 @@ export default function HomeLayout({ children }) {
     <>
       <main className="p-4 relative z-0">
         <NavigationBar />
-
         {children}
       </main>
     </>

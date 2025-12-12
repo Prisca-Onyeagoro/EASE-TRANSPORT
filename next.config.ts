@@ -1,15 +1,21 @@
-import type { NextConfig } from "next";
+const path = require("path");
 
-const nextConfig: NextConfig = {
-  turbopack: {
-    resolveAlias: {
-      // Most common: if your components folder is in the root
-      "@/*": "./*",
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Your existing config (if any)
 
-      // OR if you have a src/ folder and components inside src
-      // '@/*': './src/*',
-    },
+  webpack(config) {
+    config.resolve.alias = {
+      ...config.resolve.alias, // Keep Next.js internal aliases
+      "@": path.resolve(__dirname), // If components/ is in root: @/components → ./components
+      // OR if components/ is inside src/ folder:
+      // '@': path.resolve(__dirname, 'src'),
+      // OR more specific:
+      // '@/components': path.resolve(__dirname, 'components'),
+    };
+
+    return config;
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

@@ -1,4 +1,4 @@
-import PaymentModalWrapper from "./PaymentModalWrapper";
+import PaymentModalWrapper from "../../Components/Payment";
 import { Suspense } from "react";
 
 const Layout = ({ children, payment, summary }) => {

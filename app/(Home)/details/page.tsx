@@ -4,6 +4,8 @@ import Manual from "@/Components/Manual";
 import Reason from "@/Components/Reason";
 import BookNow from "@/Components/BookNow";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "journey-details",
   description: "view details of your journey",

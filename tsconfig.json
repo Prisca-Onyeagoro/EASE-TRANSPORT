@@ -33,7 +33,7 @@
     "**/*.mts",
     "app/order/@summary/page.jsx",
     "app/order/@payment/page.jsx",
-    "app/(Home)/details/page.tsx"
+    "app/(home)/details/page.tsx"
   ],
   "exclude": ["node_modules"]
 }

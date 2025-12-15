@@ -1,16 +1,18 @@
-"use client";
-import React from "react";
-import { useSearchParams } from "next/navigation";
+import PaymentModalWrapper from "./PaymentModalWrapper";
+import { Suspense } from "react";
 
 const Layout = ({ children, payment, summary }) => {
-  const search = useSearchParams();
-  const paymentMode = search.get("modal");
   return (
     <>
       <div>{children}</div>
 
       <div className="md:flex justify-around items-center">
-        <div>{paymentMode === "payment" && <div>{payment}</div>}</div>
+        <Suspense fallback={null}>
+          {" "}
+          {/* or <div>Loading...</div> if you want */}
+          <PaymentModalWrapper payment={payment} />
+        </Suspense>
+
         <div>{summary}</div>
       </div>
     </>
